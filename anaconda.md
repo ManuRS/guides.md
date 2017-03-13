@@ -1,4 +1,4 @@
-# Anaconda installa guide
+# Anaconda install guide
 
 Download from https://www.continuum.io/downloads and install
  - Python 3 recommended
