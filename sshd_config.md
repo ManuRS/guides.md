@@ -11,3 +11,8 @@ And add:
 Port xxxx
 AllowUsers name
 ```
+
+Restart:
+```
+systemctl restart sshd.service
+```
