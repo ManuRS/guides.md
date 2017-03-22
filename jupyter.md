@@ -11,6 +11,8 @@ Python>> exit()
 cd ~/.jupyter/
 echo "c.NotebookApp.password = u'sha1:---'" >> jupyter_notebook_config.py
 echo "c.NotebookApp.port = 1234" >> jupyter_notebook_config.py
+echo "c.NotebookApp.ip = '*'" >> jupyter_notebook_config.py
+echo "c.NotebookApp.open_browser = False" >> jupyter_notebook_config.py
 ```
 
 ## Launch
