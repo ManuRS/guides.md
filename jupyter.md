@@ -1,6 +1,6 @@
 # Jupyter notebooks
 
-## Access from every where
+## Access from everywhere
 ```
 jupyter notebook --generate-config
 python
