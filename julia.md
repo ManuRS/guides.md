@@ -1,4 +1,4 @@
-#JULIA INSTALL
+# JULIA INSTALL
 
 ## Download julia
 ```
@@ -8,4 +8,6 @@
 ```
 
 ## Create symbolic
+```
 sudo ln -s /home/user/julia-1.2.0/bin/julia /usr/local/bin/
+```
