@@ -17,6 +17,10 @@ echo "c.NotebookApp.ip = '*'" >> jupyter_notebook_config.py
 echo "c.NotebookApp.open_browser = False" >> jupyter_notebook_config.py
 echo "c.NotebookApp.allow_origin = '*'" >> jupyter_notebook_config.py
 echo "c.NotebookApp.allow_remote_access = True" >> jupyter_notebook_config.py
+
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
+echo "c.NotebookApp.keyfile = u'/complete/path/mykey.key'" >> jupyter_notebook_config.py
+echo "c.NotebookApp.certfile = u'/complete/path/mycert.pem'" >> jupyter_notebook_config.py
 ```
 
 ## Launch
