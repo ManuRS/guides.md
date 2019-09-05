@@ -20,7 +20,7 @@ echo "c.NotebookApp.allow_remote_access = True" >> jupyter_notebook_config.py
 ## Access from everywhere
 ```
 
-## SSL for encrypted communication
+## SSL for encrypted communication (Local)
 ```
 cd ~/.jupyter/
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem
@@ -28,7 +28,7 @@ echo "c.NotebookApp.keyfile = u'/complete/path/mykey.key'" >> jupyter_notebook_c
 echo "c.NotebookApp.certfile = u'/complete/path/mycert.pem'" >> jupyter_notebook_config.py
 ```
 
-## SSL for encrypted communication
+## SSL for encrypted communication (Let's encrypt)
 ```
 Seguir instrucciones de:
 https://certbot.eff.org/
