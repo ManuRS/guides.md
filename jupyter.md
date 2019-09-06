@@ -17,7 +17,6 @@ echo "c.NotebookApp.ip = '*'" >> jupyter_notebook_config.py
 echo "c.NotebookApp.open_browser = False" >> jupyter_notebook_config.py
 echo "c.NotebookApp.allow_origin = '*'" >> jupyter_notebook_config.py
 echo "c.NotebookApp.allow_remote_access = True" >> jupyter_notebook_config.py
-## Access from everywhere
 ```
 
 ## SSL for encrypted communication (Local)
