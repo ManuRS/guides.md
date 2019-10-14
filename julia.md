@@ -26,6 +26,7 @@ rm -f julia-$julia_v-linux-x86_64.tar.gz
 sudo ln -s /home/$USER/julia-$julia_v/bin/julia /usr/local/bin/julia
 ```
 ### Option B) Export PATH (add to .bashrc)
+!!!! Change $julia_v to the real number
 ```
 export PATH="/home/$USER/julia-$julia_v/bin:$PATH"
 ```
