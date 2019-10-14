@@ -14,5 +14,5 @@ echo -e '\n# JULIA INSTALL'>> .bashrc
 echo julia_v=$julia_v >> .bashrc
 echo -e 'export PATH="/home/$USER/julia-$julia_v/bin:$PATH"' >> .bashrc
 
-echo -e "\nDone.\nLogin again.\n"
+echo -e "\nDone.\nPlease, logout or close terminal to finish.\n"
 exit
