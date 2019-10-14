@@ -2,15 +2,14 @@
 
 ## 1. Download 
 
-### Option A) From the webpage
+### Option A) Web browser
 https://julialang.org/downloads/
 
-### Option B) From terminal
+### Option B) Terminal
 !!!! Check the last version and the change the variable
 ```
 julia_v1=1.2   # Major version
 julia_v2=1.2.0 # Minor revision
-
 wget --no-check-certificate https://julialang-s3.julialang.org/bin/linux/x64/$julia_v1/julia-$julia_v2-linux-x86_64.tar.gz
 ```
 
