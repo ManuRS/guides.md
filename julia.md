@@ -30,3 +30,6 @@ sudo ln -s /home/$USER/julia-$julia_v/bin/julia /usr/local/bin/julia
 ```
 export PATH="/home/$USER/julia-$julia_v/bin:$PATH"
 ```
+
+## Script
+https://raw.githubusercontent.com/ManuRS/guides.md/master/julia_install.sh
