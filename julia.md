@@ -21,7 +21,7 @@ rm -f julia-1.2.0-linux-x86_64.tar.gz
 
 ## 3. Install
 
-### Option A) Create symbolic
+### Option A) Create symbolic link
 ```
 sudo ln -s /home/$USER/julia-1.2.0/bin/julia /usr/local/bin/julia
 ```
