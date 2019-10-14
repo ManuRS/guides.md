@@ -26,9 +26,9 @@ rm -f julia-$julia_v-linux-x86_64.tar.gz
 sudo ln -s /home/$USER/julia-$julia_v/bin/julia /usr/local/bin/julia
 ```
 ### Option B) Export PATH (add to .bashrc)
-##### !!!! Change $julia_v to the real number
+##### !!!! Change VERSION to the real number in folder (e.g. 1.2.0)
 ```
-export PATH="/home/$USER/julia-$julia_v/bin:$PATH"
+export PATH="/home/$USER/julia-VERSION/bin:$PATH"
 ```
 
 ## Script
