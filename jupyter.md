@@ -2,7 +2,7 @@
 
 ## Access from everywhere
 ```
-jupyter notebook --generate-config
+jupyter-notebook --generate-config
 
 python
 Python>> from notebook.auth import passwd
@@ -26,14 +26,24 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycer
 echo "c.NotebookApp.keyfile = u'/complete/path/mykey.key'" >> jupyter_notebook_config.py
 echo "c.NotebookApp.certfile = u'/complete/path/mycert.pem'" >> jupyter_notebook_config.py
 ```
+* Tras -days 365 hay que repetir el proceso
 
 ## SSL for encrypted communication (Let's encrypt)
+1. Seguir instrucciones de:
 ```
-Seguir instrucciones de:
 https://certbot.eff.org/
-Tras crear los certificados es necesario añadir a la crontab que renueva los certificados:
-Copia al jupiter para que pueda usarlos
 ```
+2. Tras crear los certificados, añadir la crontab que los renueva automáticamente.
+```
+Modificar la ruta de la orden que nos de la página
+```
+3. Indicarle a jupyter donde se encuentran los certificados
+```
+cd ~/.jupyter/
+echo "c.NotebookApp.keyfile = u'/complete/path/mykey.key'" >> jupyter_notebook_config.py
+echo "c.NotebookApp.certfile = u'/complete/path/mycert.pem'" >> jupyter_notebook_config.py
+```
+* Guía tentativa: podría tener errores o estar falta de información
 
 ## Launch
 ```
