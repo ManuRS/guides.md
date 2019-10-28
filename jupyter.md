@@ -1,4 +1,6 @@
-# Jupyter notebooks
+# Jupyter Lab / Notebook
+
+The steps are the same for Jupyter Lab or Notebook.
 
 ## Access from everywhere
 ```
@@ -48,4 +50,17 @@ echo "c.NotebookApp.certfile = u'/complete/path/mycert.pem'" >> jupyter_notebook
 ## Launch
 ```
 nohup jupyter-notebook > salida_jupyter.txt &
+```
+
+## Plots
+```
+conda install nodejs
+conda install ipympl
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+jupyter labextension install jupyter-matplotlib
+jupyter nbextension enable --py widgetsnbextension
+```
+Restart you Jupyter, and include in the code:
+```
+%matplotlib widget
 ```
