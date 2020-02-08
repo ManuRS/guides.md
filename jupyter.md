@@ -43,10 +43,12 @@ Esta guía asume que
 ```
 3. Tras esto se habrán creado los certificados y la tarea para su renovación automática
 ```
-Disclaimer: aunque hay un crontab creada en /etc/cron.d/certbot su texto ya nos indica que bajo systemd es inutil
+Disclaimer: aunque hay un crontab creada en /etc/cron.d/certbot
+su texto ya nos indica que bajo systemd es inutil
+
 Bajo systemd la encontraremos con "systemctl show certbot.timer"
 ```
-4. Indicarle a jupyter donde se encontraran los certificados (revisa las opciones para sustituir /complete/path)
+4. Indicar donde se encontraran los certificados (revisa las opciones A y B para sustituir /complete/path)
 ```
 cd ~/.jupyter/
 echo "c.NotebookApp.keyfile = u'/complete/path/mykey.key'" >> jupyter_notebook_config.py
