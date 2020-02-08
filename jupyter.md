@@ -31,19 +31,39 @@ echo "c.NotebookApp.certfile = u'/complete/path/mycert.pem'" >> jupyter_notebook
 * Tras -days 365 hay que repetir el proceso
 
 ## SSL for encrypted communication (Let's encrypt)
-1. Seguir instrucciones de:
+1. Entrar en:
 ```
 https://certbot.eff.org/
 ```
-2. Tras crear los certificados, añadir la crontab que los renueva automáticamente.
+2. Seguir las instrucciones
 ```
-Modificar la ruta de la orden que nos de la página
+Esta guía asume que
+- Se selecciona "None of the above" en la lista de servidores inicial
+- En el paso 3 se elige "No, I need to keep my web server running"
 ```
-3. Indicarle a jupyter donde se encuentran los certificados
+3. Tras esto se habrán creado los certificados y la tarea para su renovación automática
+```
+Disclaimer: aunque hay un crontab creada en /etc/cron.d/certbot su texto ya nos indica que bajo systemd es inutil
+Bajo systemd la encontraremos con "systemctl show certbot.timer"
+```
+4. Indicarle a jupyter donde se encontraran los certificados (revisa las opciones para sustituir /complete/path)
 ```
 cd ~/.jupyter/
 echo "c.NotebookApp.keyfile = u'/complete/path/mykey.key'" >> jupyter_notebook_config.py
 echo "c.NotebookApp.certfile = u'/complete/path/mycert.pem'" >> jupyter_notebook_config.py
+```
+4. Opción A, indicar las ruta directas. Ejemplo en debian 9:
+
+```
+/etc/letsencrypt/live/NAME/privkey.pem    ->  mykey.key  en este tutorial
+/etc/letsencrypt/live/NAME/fullchain.pem  ->  mycert.pem en este turorial
+```
+4. Opción B, la opción anterior requiere que el servidor corra con sudo. Podemos optar por una alternativa que lo evite:
+```
+Copiar los certificados a la carpeta de jupyter con una tarea programada:
+sudo crontab -e
+0 5 * * 1 cp /etc/letsencrypt/live/NAME/privkey.pem /home/USER/.jupyter/mykey.key
+0 5 * * 1 cp /etc/letsencrypt/live/NAME/fullchain.pem /home/USER/.jupyter/mycert.pem
 ```
 * Guía tentativa: podría tener errores o estar falta de información
 
